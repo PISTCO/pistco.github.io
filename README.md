@@ -10,7 +10,7 @@ A Korean/English personal research portfolio, managed locally with Codex and pub
 - Publication source: `main` branch, `/docs` directory, with `.nojekyll`.
 - Initial content: an explicitly labeled editing template. No real research results, affiliations, email, photograph, or CV are supplied.
 - The only profile link is the verified public GitHub profile https://github.com/PISTCO.
-- Deployment and verification status will be recorded below after publication.
+- Published and verified on 2026-09-18 at 14:09 KST. GitHub Pages uses `main:/docs` and enforces HTTPS.
 
 ## Files and editing
 
@@ -41,8 +41,13 @@ The public deployment contains only `docs/`; other repository files are still vi
 
 - Implementation date: 2026-09-18 (Asia/Seoul).
 - Local tooling observed: Git 2.53.0.windows.1 and Node.js 24.13.1.
-- Planned checks: HTML parsing, local links/anchors, bilingual metadata and example labels, CSS validation, HTTP responses, and public deployment verification.
-- Browser rendering, visual layout, and interactive keyboard checks are not yet verified.
+- Passed: all four HTML files parsed with balanced elements; local links, section anchors, unique IDs, UTF-8 encoding, language metadata, and explicit editing-example labels checked.
+- Passed: shared CSS parsed with tinycss2 (70 top-level rules, including responsive and reduced-motion rules); Node.js preview script syntax and `git diff --check` passed.
+- Passed: local HTTP responses for `/`, `/ko/`, `/en/`, and `/assets/styles.css`, plus the custom 404 response.
+- Passed: the same four public HTTPS routes returned HTTP 200 and content matching the local files exactly; an unknown public route returned the matching custom bilingual 404 page.
+- Initial publication succeeded: https://github.com/PISTCO/pistco.github.io/actions/runs/35309598128 (site-content commit `e7707d7e41a9e156fd8d136a09c933fb7400d9dd`).
+- Local preview was opened successfully. Screenshot-based visual QA, mobile viewport checks, 200% zoom, and interactive keyboard testing were not performed.
+- HTTPS validation used PowerShell's normal certificate validation. Inkscape's bundled Python could not validate the local issuer chain; no certificate validation was disabled and no machine trust settings were changed.
 
 ## Future work
 
